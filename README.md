@@ -32,7 +32,7 @@ koa2 + sequelize + mysql + nunjucks
     koa2 koaDemo
   ```
 - 变更项目结构为 MVC 结构(参考 Rails)
-  ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/application.png)
+    - ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/application.png)
 - Koa, 数据库MySQL，如何使用 Sequelize 完成数据连接
 - 如何定义 model 数据定义 - 图集表 model/albums.js
 - 定义图集 Service： service/albums_cervie.js
