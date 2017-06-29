@@ -8,6 +8,7 @@ koa2 + sequelize + mysql + nunjucks
 
 [TOC]
 ### 1. 基础知识
+-----------
 - 学习MySQL
 - 浏览 KOA，及 Nodejs
     - [StuQ Koa在线课程](http://i5ting.github.io/stuq-koa/index.html)
@@ -25,6 +26,7 @@ koa2 + sequelize + mysql + nunjucks
 
 
 ### 2. 实现图集列表及分页-HTTP GET （Sequelize）
+-----------
 - 创建数据库，及导入已提供的数据库sql
 - koa-generator 命令创建项目：
   ```
@@ -43,6 +45,7 @@ koa2 + sequelize + mysql + nunjucks
 - 实现数据联调查询，优化返回数据
 
 ### 3. 实现图集新增-HTTP POST
+-----------
 - 简单 form POST 请求
 - 使用 koa-multer 实现本地上传文件
   - [http实践-上传](http://i5ting.github.io/stuq-koa/koa-practice/http-practice.html)
@@ -83,10 +86,11 @@ koa2 + sequelize + mysql + nunjucks
 - 明确如何解析 http 请求参数: field, file
 
 ### 4. View 层定义 - 集成 nunjucks
+-----------
 - 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
 - [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
-- 引入 nodemon.json for 更改 .html 文件自动重启应用
-- See results: * 你好，世界！*
+- 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件自动重启应用
+- See results: ** 你好，世界！**
   ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
   ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
   You need know why I choose this image. Do it, smile, face all of challenges.
