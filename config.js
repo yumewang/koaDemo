@@ -5,6 +5,12 @@ const config = {
     password: '',
     host: 'localhost',
     port: 3306
+  },
+  qiniu: {
+    ak: '',
+    sk: '',
+    bucket: 'hbb-growup-wechat',
+    host: 'http://oibzvf99m.bkt.clouddn.com'
   }
 }
 

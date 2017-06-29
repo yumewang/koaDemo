@@ -1,4 +1,10 @@
-
+/* 
+  Use 七牛 to upload file
+  Please see below:
+    七牛doc: https://developer.qiniu.com/kodo/sdk/1289/nodejs
+    how to upload: https://chenshenhai.github.io/koa2-note/note/upload/simple.html
+*/
+const config =  require('../../config')
 const qiniu = require('qiniu')
 const inspect = require('util').inspect
 const path = require('path')
@@ -21,7 +27,7 @@ function uploadFile(ctx, next) {
       // Save to local
       // file.pipe(fs.createWriteStream(filename))
       let fileSuffix = getSuffixName(filename)
-      // 开始解析文件流
+      // Start parse file stream
       file.on('data', function(data) {
         console.log(`File [${fieldname}] got ${data.length} bytes`) 
         uploadToQiniu(data, fileSuffix).then(key => {
@@ -30,7 +36,7 @@ function uploadFile(ctx, next) {
           reject(err)
         })
       })
-      // 解析文件结束
+      // End parsing
       file.on('end', function() {
         console.log(`File [${fieldname}] Finished`)
       })
@@ -47,18 +53,13 @@ function uploadFile(ctx, next) {
 
 function uploadToQiniu(file, fileSuffix) {
   return new Promise((resolve, reject) => {
-    // let suffixFile = file.originalname.split('.')[1]
     let suffixFile = fileSuffix
     crypto.pseudoRandomBytes(16, function (err, raw) {
-      // cb(err, err ? undefined : raw.toString('hex') + '.' + suffixFile)
       let key = raw.toString('hex') + '.' + suffixFile
-      console.log(key)
       // DO upload to qiniu
-      let accessKey = '';
-      let secretKey = '';
-      let mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+      let mac = new qiniu.auth.digest.Mac(config.qiniu.ak, config.qiniu.sk);
       let options = {
-        scope: 'hbb-growup-wechat',
+        scope: config.qiniu.bucket,
       };
       let putPolicy = new qiniu.rs.PutPolicy(options);
       let uploadToken = putPolicy.uploadToken(mac);
@@ -67,7 +68,6 @@ function uploadToQiniu(file, fileSuffix) {
       config.zone = qiniu.zone.Zone_z0
       let formUploader = new qiniu.form_up.FormUploader(config);
       let putExtra = new qiniu.form_up.PutExtra();
-      // let key = 'test.png';
       // 文件上传 use 数据流上传（表单方式）
       formUploader.put(uploadToken, key, file, putExtra, function(respErr,
         respBody, respInfo) {
