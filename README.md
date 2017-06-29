@@ -6,9 +6,8 @@ koa2 + sequelize + mysql + nunjucks
 - [adamchen](https://github.com/adamchenjiawei): https://github.com/adamchenjiawei/koa2_study
 - [TODO]()
 
-[TOC]
-### 1. 基础知识
------------
+## 1. 基础知识
+
 - 学习MySQL
 - 浏览 KOA，及 Nodejs
     - [StuQ Koa在线课程](http://i5ting.github.io/stuq-koa/index.html)
@@ -25,8 +24,8 @@ koa2 + sequelize + mysql + nunjucks
     -[node-style-guide](https://github.com/dead-horse/node-style-guide)
 
 
-### 2. 实现图集列表及分页-HTTP GET （Sequelize）
------------
+## 2. 实现图集列表及分页-HTTP GET （Sequelize）
+
 - 创建数据库，及导入已提供的数据库sql
 - koa-generator 命令创建项目：
   ```
@@ -44,8 +43,8 @@ koa2 + sequelize + mysql + nunjucks
     - [实现自动挂载路由](http://i5ting.github.io/stuq-koa/moa2/mount-routes.html)
 - 实现数据联调查询，优化返回数据
 
-### 3. 实现图集新增-HTTP POST
------------
+##3. 实现图集新增-HTTP POST
+
 - 简单 form POST 请求
 - 使用 koa-multer 实现本地上传文件
   - [http实践-上传](http://i5ting.github.io/stuq-koa/koa-practice/http-practice.html)
@@ -85,8 +84,8 @@ koa2 + sequelize + mysql + nunjucks
 - 图片上传新增API - 七牛云
 - 明确如何解析 http 请求参数: field, file
 
-### 4. View 层定义 - 集成 nunjucks
------------
+## 4. View 层定义 - 集成 nunjucks
+
 - 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
 - [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
 - 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件自动重启应用
