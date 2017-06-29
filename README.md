@@ -85,6 +85,7 @@ koa2 + sequelize + mysql + nunjucks
 ### 4. View 层定义 - 集成 nunjucks
 - 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
 - [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
-
-
-![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
+- See results: 
+  ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
+  ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
+  ![Hello routes](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-routes.png)
