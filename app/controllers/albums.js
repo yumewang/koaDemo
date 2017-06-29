@@ -18,7 +18,7 @@ const upload = multer({
 })
 // const upload = multer({ dest: 'uploads/' })
 const models = require('../models');
-const AlbumService = require('../services/albums_service');
+const AlbumService = require('../services/albums');
 
 exports.getlist = async (ctx, next) => {
   let albums = await AlbumService.getList(ctx, next)

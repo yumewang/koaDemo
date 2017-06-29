@@ -2,7 +2,6 @@
 
 const models = require('../models');
 
-
 exports.getList = async(ctx, next) => {
   let currentPage = ctx.query.page || 1
   let count = parseInt(ctx.query.count) || 10

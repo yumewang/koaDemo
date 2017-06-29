@@ -1,11 +1,5 @@
 const router = require('koa-router')()
-const multer = require('koa-multer');
-// const albumsController = require('../controllers/albums_controller')
-
 const Controller = require('../controllers')
-const upload = multer({ dest: './uploads/'})
-// const upload = multer({ dest: './uploads/', limits: { fileSize: 30000 } })
-
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -23,14 +17,13 @@ router.get('json', async (ctx, next) => {
   }
 })
 
-router.get('api/albums', Controller.Albums.getlist);
-router.post('api/albums', Controller.Albums.create);
-// router.post('api/upload', upload.single('avatar'), (ctx, next) => {
-//   console.log(ctx)
-//   ctx.body = "upload is success";
-// })
-
+// Get albums with page & count
+router.get('api/albums', Controller.Albums.getlist)
+// Create albums
+router.post('api/albums', Controller.Albums.create)
+// Upload file to diskStorage with koa-multer
 router.post('api/upload', Controller.Albums.uploadImage)
+// Upload file to Qiniu
 router.post('api/qiniu', Controller.Qiniu.qiniu)
 
 module.exports = router
