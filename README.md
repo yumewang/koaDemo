@@ -43,7 +43,7 @@ koa2 + sequelize + mysql + nunjucks
     - [实现自动挂载路由](http://i5ting.github.io/stuq-koa/moa2/mount-routes.html)
 - 实现数据联调查询，优化返回数据
 
-##3. 实现图集新增-HTTP POST
+## 3. 实现图集新增-HTTP POST
 
 - 简单 form POST 请求
 - 使用 koa-multer 实现本地上传文件
