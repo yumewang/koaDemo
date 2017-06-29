@@ -1,0 +1,111 @@
+{% extends "../layouts/application.html" %}
+
+{% block style %}
+  <style>
+    .album-cover {
+      width: 10%;
+    }
+    .album-cover img {
+      width: 30%;
+    }
+    .album-cover-container {
+      text-align: center;
+      max-height: 500px;
+      overflow-y: scroll;
+    }
+    .album-cover-container img {
+      width: 80%;
+    }
+    .albums .pagination {
+      display: inline-block;
+      padding-left: 0;
+      margin: 5px 0 ;
+      border-radius: 4px;
+    }
+  </style>
+{% endblock %}
+{% block script %}
+  <script type="text/javascript">
+    $('#myModal').on('show.bs.modal', function (event) {
+      // do something...
+      var $who = $(event.relatedTarget) // who is that triggered the modal
+      console.log($who.data('url'))
+      $('.album-cover-big').prop('src', $who.data('url'))
+      // $('album-cover-big').append('<img src="' + $who.data('url') + '">')
+    })
+  </script>
+{% endblock %}
+{% block content %}
+  <div class="title">
+    <h3 style="display: inline-block; margin-top: 0; margin-bottom: 20px;">图集管理</h3>
+    <div class="" style="float:right">
+      <button type="button" class="btn btn-default">新建图集</button>
+      <button type="button" class="btn btn-default">编辑图集</button>
+    </div>
+  </div>
+  <div class="table-responsive clearfix albums">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>图集标题</td>
+          <td>封面</td>
+          <td>浏览数</td>
+          <td>点赞数</td>
+          <td>图片内容集数量</td>
+        </tr>
+      </thead>
+      {% for item in albums.data %}
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.title}}</td>
+          <td class="album-cover">
+            {% if item.cover !== '' %}
+              <a href="#" data-toggle="modal" data-target="#myModal" data-url="{{item.cover}}">
+               <img src="{{item.cover}}">
+              </a>
+            {% endif %}
+          </td>
+          <td>{{item.visit_count}}</td>
+          <td>{{item.thumbup_count}}</td>
+          <td>{{item.max_pos}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <div class="pull-right">
+      <nav aria-label="Page navigation" class="navigation">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          {% for i in range(0, albums.total_pages) %}
+            <li><a href="/admin/albums?page={{i + 1}}&count=10">{{i + 1}}</a></li>
+          {% endfor %}
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">图集封面</h4>
+        </div>
+        <div class="modal-body">
+          <div class="album-cover-container">
+            <img src="#" class="album-cover-big">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

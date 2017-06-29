@@ -26,6 +26,8 @@ router.post('api/upload', Controller.Albums.uploadImage)
 // Upload file to Qiniu
 router.post('api/qiniu', Controller.Qiniu.qiniu)
 
+router.get('admin/albums', Controller.Admin.Albums.index)
+
 module.exports = router
 
 
