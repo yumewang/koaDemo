@@ -19,6 +19,7 @@
 - 安装MySQL可视化工具 Sequel （自定）
 - 使用 Postman api请求工具（或HTTPie），用于验证 API 正确性
 
+
 ### 2. 实现图集列表及分页-HTTP GET （Sequelize）
 - 创建数据库，及导入已提供的数据库sql
 - koa-generator 命令创建项目：
@@ -34,10 +35,38 @@
 - 实现获取所有图集列表(Json对象)
 - 实现图集列表分页
 - 利用 mount-koa-routes 实现自动挂载路由
-    - (实现自动挂载路由)[http://i5ting.github.io/stuq-koa/moa2/mount-routes.html]
+    - [实现自动挂载路由](http://i5ting.github.io/stuq-koa/moa2/mount-routes.html)
 - 实现数据联调查询，优化返回数据
 
+### 3. 实现图集新增-HTTP POST
+- 简单 form POST 请求
+- 使用 koa-multer 实现本地上传文件
+  - [http实践-上传](http://i5ting.github.io/stuq-koa/koa-practice/http-practice.html)
+  - 如何处理图片上传时异常，及文件大小限制？
+    [Multer test file: error-handling.js](https://github.com/koa-modules/multer/blob/master/test/error-handling.js)
+    [Multer 中文档](https://github.com/expressjs/multer/blob/master/doc/README-zh-cn.md)
+  - 分析 koa-multer 源码
+  ```
+    function makePromise(multer, name) {
+      if (!multer[name]) return
 
+      const fn = multer[name]
+
+      multer[name] = function () {
+        const middleware = fn.apply(this, arguments)
+
+        return (ctx, next) => {
+          return new Promise((resolve, reject) => {
+            middleware(ctx.req, ctx.res, (err) => {
+              err ? reject(err) : resolve(ctx)
+            })
+          }).then(next)
+        }
+      }
+    }
+  ```
+- 图片上传新增API - 七牛云
+- 明确如何解析 http 请求参数: field, file
 
 
 
