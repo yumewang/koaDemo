@@ -18,14 +18,16 @@
     - [HTTP协议的前身今世](https://github.com/muwenzi/Program-Blog/issues/35)
 - 安装MySQL可视化工具 Sequel （自定）
 - 使用 Postman api请求工具（或HTTPie），用于验证 API 正确性
+- 所需遵循的代码规范
+    -[node-style-guide](https://github.com/dead-horse/node-style-guide)
 
 
 ### 2. 实现图集列表及分页-HTTP GET （Sequelize）
 - 创建数据库，及导入已提供的数据库sql
 - koa-generator 命令创建项目：
-```
-  koa2 koaDemo
-```
+  ```
+    koa2 koaDemo
+  ```
 - 变更项目结构为 MVC 结构
 - Koa, 数据库MySQL，如何使用 Sequelize 完成数据连接
 - 如何定义 model 数据定义 - 图集表 model/albums.js
@@ -43,10 +45,11 @@
 - 使用 koa-multer 实现本地上传文件
   - [http实践-上传](http://i5ting.github.io/stuq-koa/koa-practice/http-practice.html)
   - 如何处理图片上传时异常，及文件大小限制？
-    [Multer test file: error-handling.js](https://github.com/koa-modules/multer/blob/master/test/error-handling.js)
-    [Multer 中文档](https://github.com/expressjs/multer/blob/master/doc/README-zh-cn.md)
+    - [Multer test file: error-handling.js](https://github.com/koa-modules/multer/blob/master/test/error-handling.js)
+    - [Multer 中文档](https://github.com/expressjs/multer/blob/master/doc/README-zh-cn.md)
   - 分析 koa-multer 源码
   ```
+    源码如下：
     function makePromise(multer, name) {
       if (!multer[name]) return
 
@@ -63,6 +66,15 @@
           }).then(next)
         }
       }
+    }
+
+    app/controller/albums.js 中上传处理如下：
+    exports.uploadImage = async (ctx, next) => {
+      await upload.single('avatar')(ctx, next).then(() => {
+        ctx.body = {file: ctx.req.file.path};
+      }).catch(err => {
+        ctx.body = err;
+      })
     }
   ```
 - 图片上传新增API - 七牛云
