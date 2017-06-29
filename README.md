@@ -2,9 +2,9 @@
 
 koa2 + sequelize + mysql + nunjucks
 
-### We three:
+### We three (Two heads are always better then one):
 - [adamchen](https://github.com/adamchenjiawei): https://github.com/adamchenjiawei/koa2_study
-- 
+- [TODO]()
 
 [TOC]
 ### 1. 基础知识
@@ -89,4 +89,5 @@ koa2 + sequelize + mysql + nunjucks
 - See results: * 你好，世界！*
   ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
   ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
+  You need know why I choose this image. Do it, smile, face all of challenges.
   ![Hello routes](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-routes.png)
