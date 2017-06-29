@@ -31,7 +31,8 @@ koa2 + sequelize + mysql + nunjucks
   ```
     koa2 koaDemo
   ```
-- 变更项目结构为 MVC 结构
+- 变更项目结构为 MVC 结构(参考 Rails)
+  ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/application.png)
 - Koa, 数据库MySQL，如何使用 Sequelize 完成数据连接
 - 如何定义 model 数据定义 - 图集表 model/albums.js
 - 定义图集 Service： service/albums_cervie.js
@@ -42,6 +43,8 @@ koa2 + sequelize + mysql + nunjucks
 - 利用 mount-koa-routes 实现自动挂载路由
     - [实现自动挂载路由](http://i5ting.github.io/stuq-koa/moa2/mount-routes.html)
 - 实现数据联调查询，优化返回数据
+- 自动加载所有的 model 定义
+  ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/export-model.jpg)
 
 ## 3. 实现图集新增-HTTP POST
 
@@ -88,7 +91,8 @@ koa2 + sequelize + mysql + nunjucks
 
 - 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
 - [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
-- 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件自动重启应用
+- 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件时，自动重启应用
+- 引入 Bootstrap [起步](http://v3.bootcss.com/getting-started/)
 - See results: ** 你好，世界！**
   ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
   ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
