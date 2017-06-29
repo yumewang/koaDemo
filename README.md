@@ -5,4 +5,4 @@
 2. 
 
 
-![Hello world](./public/images/hellow-world)
+![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
