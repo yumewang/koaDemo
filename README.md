@@ -1,6 +1,8 @@
 # Koa learning five days
 
-#### We three:
+koa2 + sequelize + mysql + nunjucks
+
+### We three:
 - [adamchen](https://github.com/adamchenjiawei): https://github.com/adamchenjiawei/koa2_study
 - 
 
@@ -80,7 +82,9 @@
 - 图片上传新增API - 七牛云
 - 明确如何解析 http 请求参数: field, file
 
-
+### 4. View 层定义 - 集成 nunjucks
+- 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
+- [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
 
 
 ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
