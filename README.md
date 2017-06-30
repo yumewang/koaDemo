@@ -29,8 +29,7 @@ koa2 + sequelize + mysql + nunjucks
 - 创建数据库，及导入已提供的数据库sql（定义数据结构）
 
     也可以使用后续使用的 Sequelize 来定义数据表：
-    
-      ```
+
       // Models are defined with sequelize.define('name', {attributes}, {options}).
       const User = sequelize.define('user', {
         firstName: {
@@ -49,7 +48,7 @@ koa2 + sequelize + mysql + nunjucks
           lastName: 'Hancock'
         });
       });
-      ```
+
 - koa-generator 命令创建项目：
   ```
     koa2 koaDemo
@@ -78,7 +77,7 @@ koa2 + sequelize + mysql + nunjucks
   - 如何处理图片上传时异常，及文件大小限制？
     - [Multer test file: error-handling.js](https://github.com/koa-modules/multer/blob/master/test/error-handling.js)
     - [Multer 中文档](https://github.com/expressjs/multer/blob/master/doc/README-zh-cn.md)
-  - 分析 koa-multer 源码
+  - 分析 [koa-multer 源码](https://github.com/koa-modules/multer/blob/master/index.js)
   ```
     源码如下：
     function makePromise(multer, name) {

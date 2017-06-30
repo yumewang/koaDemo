@@ -8,6 +8,11 @@
     .album-cover img {
       width: 30%;
     }
+    .album-cover a {
+      max-height: 20px;
+      display: inline-block;
+      overflow: hidden;
+    }
     .album-cover-container {
       text-align: center;
       max-height: 500px;
@@ -37,7 +42,7 @@
 {% endblock %}
 {% block content %}
   <div class="title">
-    <h3 style="display: inline-block; margin-top: 0; margin-bottom: 20px;">图集管理</h3>
+    <h4 style="display: inline-block; margin-top: 0; margin-bottom: 20px;">图集管理</h4>
     <div class="" style="float:right">
       <button type="button" class="btn btn-default">新建图集</button>
       <button type="button" class="btn btn-default">编辑图集</button>
