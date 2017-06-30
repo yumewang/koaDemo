@@ -1,8 +1,7 @@
-const dbconfig =  require('../../config')
+const config =  require('../../config')
 const Sequelize = require('sequelize');
-console.log(dbconfig)
-const sequelize = new Sequelize(dbconfig.mysql.database, dbconfig.mysql.username, dbconfig.mysql.password, {
-  host: dbconfig.mysql.host,
+const sequelize = new Sequelize(config.mysql.database, config.mysql.username, config.mysql.password, {
+  host: config.mysql.host,
   dialect: 'mysql',
   pool: { // TODO: why do define this pool
     max: 5,

@@ -36,8 +36,5 @@ app.use(async (ctx, next) => {
 
 // routes
 mount(app,  __dirname + '/app/routes', true);
-// app.use(index.routes(), index.allowedMethods())
-// app.use(users.routes(), users.allowedMethods())
 
-console.log('we are here: ', process.env.NODE_ENV)
 module.exports = app

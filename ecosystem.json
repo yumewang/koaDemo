@@ -1,0 +1,33 @@
+{
+  "apps" : [{
+    "name"      : "koaDemo",
+    "script"    : "bin/www",
+    "env": {
+      "COMMON_VARIABLE": "true"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }],
+  "deploy" : {
+    "production" : {
+      "user" : "node",
+      "host" : "localhost",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:yumewang/koaDemo.git",
+      "path" : "/Users/defaultuser/pingpong",
+      "post-deploy" : "npm install; NODE_ENV=production pm2 startOrRestart ecosystem.json --env production"
+    },
+    "dev" : {
+      "user" : "node",
+      "host" : "localhost",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:yumewang/koaDemo.git",
+      "path" : "/Users/defaultuser/pingpong",
+      "post-deploy" : "npm install; pm2 startOrRestart ecosystem.json --env dev",
+      "env"  : {
+        "NODE_ENV": "dev"
+      }
+    }
+  }
+}

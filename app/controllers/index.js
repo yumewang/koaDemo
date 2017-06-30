@@ -25,6 +25,5 @@ function autoController(parent, filePath) {
     });
 }
 
-console.log(controllers)
 module.exports = controllers;
 
