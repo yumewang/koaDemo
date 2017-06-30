@@ -120,7 +120,7 @@ koa2 + sequelize + mysql + nunjucks
   ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
   ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
   You need know why I choose this image. Do it, smile, face all of challenges.
-  To Gandalf the far-off memories of a journey long before were now of little help, but even in the gloom and despite all windings of the road he knew whither he wished to go, and he did not falter, as long as there was a path that led towards his goal. - The Lord of the Rings
+  To Gandalf the far-off memories of a journey long before were now of little help, but even in the gloom and despite all windings of the road he knew whither he wished to go, and he did not falter, as long as there was a path that led towards his goal. - The Lord of the Rings <br/>
   ![Hello routes](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-routes.png)
 
 
