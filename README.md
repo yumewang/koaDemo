@@ -29,6 +29,7 @@ koa2 + sequelize + mysql + nunjucks
 - 创建数据库，及导入已提供的数据库sql（定义数据结构）
 
     也可以使用后续使用的 Sequelize 来定义数据表：
+    
       ```
       // Models are defined with sequelize.define('name', {attributes}, {options}).
       const User = sequelize.define('user', {
@@ -56,6 +57,7 @@ koa2 + sequelize + mysql + nunjucks
 - 变更项目结构为 MVC 结构(参考 Rails)<br />
     ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/application.png)
 - Koa, 数据库MySQL，如何使用 Sequelize 完成数据连接
+    - [Getting started for Sequelize](http://docs.sequelizejs.com/manual/installation/getting-started)
 - 如何定义 model 数据定义 - 图集表 model/albums.js
 - 定义图集 Service： service/albums_cervie.js
 - 定义图集 Controller：controller/albums_controller.js
