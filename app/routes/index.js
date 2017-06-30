@@ -1,5 +1,5 @@
 const router = require('koa-router')()
-const Controller = require('../controllers')
+const Controllers = require('../controllers')
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -18,16 +18,20 @@ router.get('json', async (ctx, next) => {
 })
 
 // Get albums with page & count
-router.get('api/albums', Controller.Albums.getlist)
+router.get('api/albums', Controllers.albums.getlist)
 // Create albums
-router.post('api/albums', Controller.Albums.create)
+router.post('api/albums', Controllers.albums.create)
 // Upload file to diskStorage with koa-multer
-router.post('api/upload', Controller.Albums.uploadImage)
+router.post('api/upload', Controllers.albums.uploadImage)
 // Upload file to Qiniu
-router.post('api/qiniu', Controller.Qiniu.qiniu)
+router.post('api/qiniu', Controllers.qiniu.qiniu)
+// Route for admin
+router.get('admin/albums', Controllers.admin.albums.index)
 
-router.get('admin/albums', Controller.Admin.Albums.index)
-
+// Route for auto-controller
+router.get('auto/con', Controllers.albums.testForController)
+router.get('auto/con2', Controllers.admin.albums.testForController)
+router.get('auto/con3', Controllers.admin.second.albums.testForController)
 module.exports = router
 
 

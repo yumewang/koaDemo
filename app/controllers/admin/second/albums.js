@@ -1,6 +1,6 @@
 'use strict';
 
-const AlbumService = require('../../services/albums');
+const AlbumService = require('../../../services/albums');
 
 exports.index = async (ctx, next) => {
   let currentPage = ctx.query.page || 1
@@ -17,6 +17,6 @@ exports.index = async (ctx, next) => {
 
 exports.testForController = async(ctx, next) => {
   ctx.body = {
-    title: 'Hello Koa 2 from admin!'
+    title: 'Hello Koa 2 from admin-second!'
   }
 }

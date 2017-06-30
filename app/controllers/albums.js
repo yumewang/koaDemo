@@ -52,3 +52,8 @@ exports.uploadImage = async (ctx, next) => {
   })
 }
 
+exports.testForController = async(ctx, next) => {
+  ctx.body = {
+    title: 'Hello Koa 2 from outside!'
+  }
+}

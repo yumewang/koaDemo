@@ -1,1 +1,0 @@
-exports.Albums = require('./albums')
