@@ -115,7 +115,7 @@ koa2 + sequelize + mysql + nunjucks
 - 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
   
   [adamchen](https://github.com/adamchenjiawei) 同学：选用nunjucks 做为模板引擎。  这个比jade模板语法容易理解些，比较容易上手，同时支持 变量、逻辑表达式、循环、layout、include、宏、扩展等功能。
-- 关于如何使用 nunjucks [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
+- 关于如何使用 nunjucks： [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
 - 按照 [adamchen](https://github.com/adamchenjiawei) 同学要求，views 的目录结构依旧参照 Rails views 定义。
 - 引入 Bootstrap [起步](http://v3.bootcss.com/getting-started/)
 - 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件时，自动重启应用
