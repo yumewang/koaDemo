@@ -108,17 +108,20 @@ koa2 + sequelize + mysql + nunjucks
     }
   ```
 - 图片上传新增API - 七牛云
-- 明确如何解析 http 请求参数: field, file
+- 明确如何解析 http 请求参数: field 字段, file 文件
 
 ## 4. View 层定义 - 集成 nunjucks
 
 - 引入 [koa-nunjucks-2](https://github.com/strawbrary/koa-nunjucks-2)
-  [adamchen](https://github.com/adamchenjiawei)：选用nunjucks 做为模板引擎。  这个比jade模板语法容易理解些，比较容易上手，同时支持 变量、逻辑表达式、循环、layout、include、宏、扩展等功能。
-- [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
-- 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件时，自动重启应用
-  [adamchen](https://github.com/adamchenjiawei)：本地开发时，修改 .js 文件，会自动重启服务，但是在修改 .html 时，却不会去重启。因此我们需要修改 nodemon 的配置来使 .html 文件修改也会触发自动重启服务。
+  
+  [adamchen](https://github.com/adamchenjiawei) 同学：选用nunjucks 做为模板引擎。  这个比jade模板语法容易理解些，比较容易上手，同时支持 变量、逻辑表达式、循环、layout、include、宏、扩展等功能。
+- 关于如何使用 nunjucks [Getting Started with nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
+- 按照 [adamchen](https://github.com/adamchenjiawei) 同学要求，views 的目录结构依旧参照 Rails views 定义。
 - 引入 Bootstrap [起步](http://v3.bootcss.com/getting-started/)
-- 按照 [adamchen](https://github.com/adamchenjiawei) 要求，views 的目录结构依旧参照 Rails views 定义
+- 引入 [nodemon.json](https://github.com/yumewang/koaDemo/blob/master/nodemon.json) ，更改 .html 文件时，自动重启应用
+
+  [adamchen](https://github.com/adamchenjiawei) 同学：本地开发时，修改 .js 文件，会自动重启服务，但是在修改 .html 时，却不会去重启。因此我们需要修改 nodemon 的配置来使 .html 文件修改也会触发自动重启服务。
+
 
 ## 5. 部署及环境配置
 
