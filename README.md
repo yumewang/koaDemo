@@ -26,13 +26,35 @@ koa2 + sequelize + mysql + nunjucks
 
 ## 2. 实现图集列表及分页-HTTP GET （Sequelize）
 
-- 创建数据库，及导入已提供的数据库sql
+- 创建数据库，及导入已提供的数据库sql（定义数据结构）
+
+    也可以使用后续使用的 Sequelize 来定义数据表：
+      ```
+      // Models are defined with sequelize.define('name', {attributes}, {options}).
+      const User = sequelize.define('user', {
+        firstName: {
+          type: Sequelize.STRING
+        },
+        lastName: {
+          type: Sequelize.STRING
+        }
+      });
+
+      // force: true will drop the table if it already exists
+      User.sync({force: true}).then(() => {
+        // Table created
+        return User.create({
+          firstName: 'John',
+          lastName: 'Hancock'
+        });
+      });
+      ```
 - koa-generator 命令创建项目：
   ```
     koa2 koaDemo
   ```
-- 变更项目结构为 MVC 结构(参考 Rails)
-    - ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/application.png)
+- 变更项目结构为 MVC 结构(参考 Rails)<br />
+    ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/application.png)
 - Koa, 数据库MySQL，如何使用 Sequelize 完成数据连接
 - 如何定义 model 数据定义 - 图集表 model/albums.js
 - 定义图集 Service： service/albums_cervie.js
@@ -97,4 +119,9 @@ koa2 + sequelize + mysql + nunjucks
   ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
   ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
   You need know why I choose this image. Do it, smile, face all of challenges.
+  To Gandalf the far-off memories of a journey long before were now of little help, but even in the gloom and despite all windings of the road he knew whither he wished to go, and he did not falter, as long as there was a path that led towards his goal. - The Lord of the Rings
   ![Hello routes](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-routes.png)
+
+
+
+  
