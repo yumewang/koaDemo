@@ -3,12 +3,19 @@
 koa2 + sequelize + mysql + nunjucks
 
 ### We three (Two heads are always better then one):
-- [adamchen](https://github.com/adamchenjiawei): https://github.com/adamchenjiawei/koa2_study
-- [TODO]()
+
+Take five days to learn Koa2. This is our plan. <br />
+We did it from 2017-06-26 to 2017-06-29. At these days, We had some arguments, conflicts, and then created these repositories. we did code reviews with each other, just kept a little heed on it. We also pressed each other, and made sure what we done can go towards our goal. Finnally, We sorted out this file to record how did we plan, what we had done. There are too many technical points which need us to learn, and learn deeply. Just keep on.
+
+| Who | Title | Repositories | 
+| ------| ------ | ------ |
+| [Adamchen ](https://github.com/adamchenjiawei) | Full Stack Engineer | https://github.com/adamchenjiawei/koa2_study |
+| Lifang | Web Front-End Engineer  | https://github.com/adamchenjiawei/koa2_study |
+| Emma(me) | Web Front-End Engineer  | https://github.com/yumewang/koaDemo |
 
 ## 1. 基础知识
 
-- 学习MySQL
+- 学习MySQL & Sequelize
 - 浏览 KOA，及 Nodejs
     - [StuQ Koa在线课程](http://i5ting.github.io/stuq-koa/index.html)
     - [koa2进阶学习笔记](https://chenshenhai.github.io/koa2-note/)
@@ -132,7 +139,7 @@ koa2 + sequelize + mysql + nunjucks
 - 定义环境配置档
     - [参见：如何加载不同环境的配置档](https://github.com/adamchenjiawei/koa2_study/blob/master/config/index.js)
 
-## See results: ** 你好，世界！**
+## finally, see results: ** 你好，世界！**
   ![Hello world](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-world.png)
   ![Hello Cover](https://github.com/yumewang/koaDemo/blob/master/public/images/hello-cover.png)
   <br/>You need know why I choose this image. Do it, smile, face all of challenges. <br/>
