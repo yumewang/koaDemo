@@ -5,7 +5,7 @@ koa2 + sequelize + mysql + nunjucks
 ### We three (Two heads are always better then one):
 
 Take five days to learn Koa2. This is our plan. <br />
-We did it from 2017-06-26 to 2017-06-29. At these days, We had some arguments, conflicts, and then created these repositories. we did code reviews with each other, just kept a little heed on it. We also pressed each other, and made sure what we done can go towards our goal. Finnally, We sorted out this file to record how did we plan, what we had done. There are too many technical points which need us to learn, and learn deeply. Just keep on.
+We did it from 2017-06-26 to 2017-06-29. At these days, We had some argument, conflicts, and then created these repositories. we did code reviews with each other, just kept a little heed on it. We also pressed each other, and made sure what we done can go towards our goal. Finnally, We sorted out this file to record how did we plan, what we had done. There are too many technical points which need us to learn, and learn deeply. Just keep on.
 
 | Who | Title | Repositories | 
 | ------| ------ | ------ |
@@ -28,7 +28,8 @@ We did it from 2017-06-26 to 2017-06-29. At these days, We had some arguments, c
 - 安装MySQL可视化工具 Sequel （自定）
 - 使用 Postman api请求工具（或HTTPie），用于验证 API 正确性
 - 所需遵循的代码规范
-    -[node-style-guide](https://github.com/dead-horse/node-style-guide)
+    - [node-style-guide](https://github.com/dead-horse/node-style-guide)
+    - [Google JavaScript Style Guide](http://rudasn.github.io/google-javascript-style-guide/)
 
 
 ## 2. 实现图集列表及分页-HTTP GET （Sequelize）
