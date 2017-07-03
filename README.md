@@ -10,7 +10,7 @@ We did it from 2017-06-26 to 2017-06-29. At these days, We had some argument, co
 | Who | Title | Repositories | 
 | ------| ------ | ------ |
 | [Adamchen ](https://github.com/adamchenjiawei) | Full Stack Engineer | https://github.com/adamchenjiawei/koa2_study |
-| Lifang | Web Front-End Engineer  | https://github.com/adamchenjiawei/koa2_study |
+| QinLifang | Web Front-End Engineer  | https://github.com/qlf123/koaDemo |
 | Emma(me) | Web Front-End Engineer  | https://github.com/yumewang/koaDemo |
 
 ## 1. 基础知识
