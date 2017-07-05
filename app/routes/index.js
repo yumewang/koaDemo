@@ -26,7 +26,9 @@ router.post('api/upload', Controllers.albums.uploadImage)
 // Upload file to Qiniu
 router.post('api/qiniu', Controllers.qiniu.qiniu)
 // Route for admin
+router.get('admin/login', Controllers.admin.admin.login)
 router.get('admin/albums', Controllers.admin.albums.index)
+
 
 // Route for auto-controller
 router.get('auto/con', Controllers.albums.testForController)

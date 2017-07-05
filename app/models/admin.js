@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const { INTEGER, STRING, DATE } = Sequelize;
 
 module.exports = function (sequelize, Sequelize) {
-  const User = sequelize.define('user', {
+  const Admin = sequelize.define('admin', {
     id: {
       type: INTEGER,
       primaryKey: true,
@@ -18,6 +18,11 @@ module.exports = function (sequelize, Sequelize) {
       type: STRING,
       defaultVaule: '',
       comment: '用户名称'
+    },
+    password: {
+      type: STRING,
+      defaultVaule: '',
+      comment: '用户密码'
     },
     created_at: {
       type: DATE
@@ -37,7 +42,7 @@ module.exports = function (sequelize, Sequelize) {
     ]
   });
 
-  return User;
+  return Admin;
 }
 
 
