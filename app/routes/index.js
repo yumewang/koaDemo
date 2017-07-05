@@ -27,6 +27,7 @@ router.post('api/upload', Controllers.albums.uploadImage)
 router.post('api/qiniu', Controllers.qiniu.qiniu)
 // Route for admin
 router.get('admin/login', Controllers.admin.admin.login)
+router.get('admin/logout', Controllers.admin.admin.logout)
 router.get('admin/albums', Controllers.admin.albums.index)
 
 

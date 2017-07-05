@@ -20,9 +20,23 @@ exports.login = async(ctx, next) => {
   }
   try {
     let admin = await AdminsService.login(ctx, next)
+    // Create session info, after login in.
+    let n = ctx.session.views || 0;
+    ctx.session.views = ++n;
     ctx.body = loginRes
   } catch (e) {
     loginRes.msg = 'Login failure.'
     ctx.body = loginRes
   }
 }
+
+exports.logout = async(ctx, next) => {
+  let logoutRes = {
+    rv: '200',
+    msg: 'logout Success'
+  }
+  ctx.session = null
+  ctx.body = logoutRes
+}
+
+

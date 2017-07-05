@@ -21,6 +21,7 @@
     "koa-nunjucks-2": "^3.0.2",
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.1.1",
+    "koa-session": "^5.4.0",
     "koa-static": "^3.0.0",
     "moment": "^2.18.1",
     "mount-koa-routes": "^2.0.1",
