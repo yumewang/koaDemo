@@ -1,0 +1,48 @@
+{% extends "./layouts/application.html" %}
+{% block style %}
+  <style>
+    .login form, .login .do-login {
+      width: 40%;
+      margin: 0 auto;
+    }
+  </style>
+{% endblock %}
+{% block content %}
+  <div class="container login-page">
+    <div class="login">
+      <form action="#">
+      <p class="text-danger error-for-login"></p>
+       <div class="form-group">
+         <label for="userName">用户名</label>
+         <input type="text" class="form-control" id="userName" placeholder="用户名">
+       </div>
+       <div class="form-group">
+         <label for="userPassword">密码</label>
+         <input type="password" class="form-control" id="userPassword" placeholder="密码">
+       </div>
+      </form>
+      <button class="btn btn-primary btn-block do-login">登陆</button>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+    $('.do-login').click(function() {
+      var userName = $('#userName').val()
+      var password = $('#userPassword').val()
+      $.ajax({
+        method: "GET",
+        url: "/admin/login",
+        data: { user: userName, password: password }
+      })
+      .done(function( data ) {
+        if (data.rv !== "200") {
+          $('.error-for-login').text(data.msg)
+        } else {
+          window.location.href = '/admin/albums'
+        }
+      });
+    })
+  </script>
+{% endblock %}
