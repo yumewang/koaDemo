@@ -22,6 +22,7 @@ router.get('api/albums', Controllers.albums.getlist)
 // Create albums
 router.post('api/albums', Controllers.albums.create)
 router.post('api/v2/albums', Controllers.v2.albums.create)
+router.get('api/v2/albums/:id', Controllers.v2.albums.getbyId)
 // Upload file to diskStorage with koa-multer
 router.post('api/upload', Controllers.albums.uploadImage)
 // Upload file to Qiniu

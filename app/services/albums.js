@@ -76,4 +76,42 @@ exports.createV2 = async(ctx, next) => {
   }
 }
 
+exports.getById = async(ctx, next) => {
+  let albumId = ctx.params.id
+  // Get album with albumId
+  let album = await models.album.findById(albumId)
+  // Get all of section with albumId
+  let sections = await models.section.findAll({ 
+    where: { album_id: albumId},
+    attributes: ['id', 'section_type', 'content', 'pos']
+  })
+  let result = album.dataValues
+  let resSection = []
+  for(let i = 0; i < sections.length; i++) {
+    let tmpSection = sections[i].dataValues
+    if (tmpSection.section_type === 'photo') {
+      // Get all of photos with section id
+      let photos = await models.photo.findAll({ 
+        where: {section_id: tmpSection.id},
+        attributes: ['image', 'caption', 'filter', 'pos']
+      })
+      let tmpPhotos = []
+      photos.forEach(function(photo){
+        tmpPhotos.push(photo.dataValues)
+      })
+      tmpSection['photos'] = tmpPhotos
+    } else if (tmpSection.section_type === 'video') {
+      // Get video with section id
+      let video = await models.video.findOne({ 
+        where: {section_id: tmpSection.id},
+        attributes: ['video', 'cover', 'width', 'height', 'size', 'length']
+      })
+      tmpSection['videos'] = video.dataValues
+    }
+    resSection.push(tmpSection)
+  }
+  result.sections = resSection
+  return result
+}
+
 
