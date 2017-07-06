@@ -1,20 +1,19 @@
-// const db = require('../db');
 const Sequelize = require('sequelize');
 const { INTEGER, STRING, DATE } = Sequelize;
 
 module.exports = function (sequelize, Sequelize) {
-  const Photo = sequelize.define('photo', {
+  const Section = sequelize.define('section', {
     id: {
       type: INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    image: {
+    section_type: {
       type: 'STRING',
       defaultVaule: '',
-      comment: '图片地址'
+      comment: '段落类型'
     },
-    caption: {
+    content: {
       type: 'STRING',
       defaultVaule: '',
       comment: '图片标题'
@@ -24,17 +23,7 @@ module.exports = function (sequelize, Sequelize) {
       defaultVaule: '',
       comment: ''
     },
-    filter: {
-      type: 'STRING',
-      defaultVaule: '',
-      comment: ''
-    },
     album_id: {
-      type: INTEGER,
-      allowNull: false,
-      comment: '图集ID'
-    },
-    section_id: {
       type: INTEGER,
       allowNull: false,
       comment: '图集ID'
@@ -52,16 +41,10 @@ module.exports = function (sequelize, Sequelize) {
     underscored: true,
     index: [
       {
-        fields: ['user_id']
+        fields: ['sections_album_id'] // TODO: What is this?
       }
     ]
   });
 
-  Photo.associate = function (models) {
-    Photo.belongsTo(models.album, {
-      foreignKey: 'album_Id',
-    });
-  }
-
-  return Photo;
+  return Section;
 }

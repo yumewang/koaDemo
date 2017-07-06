@@ -21,6 +21,7 @@ router.get('json', async (ctx, next) => {
 router.get('api/albums', Controllers.albums.getlist)
 // Create albums
 router.post('api/albums', Controllers.albums.create)
+router.post('api/v2/albums', Controllers.v2.albums.create)
 // Upload file to diskStorage with koa-multer
 router.post('api/upload', Controllers.albums.uploadImage)
 // Upload file to Qiniu

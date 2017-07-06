@@ -8,7 +8,6 @@ exports.getList = async(ctx, next) => {
   // TODO: https://gist.github.com/yeluolanyan/3346043
   // setOffSet((this.pageNum - 1) * getPageSize());
   let offset = (currentPage - 1) * count || 0
-  console.log(models.album)
   return await models.album.findAndCount({
     attributes: ['id', 'title', 'visit_count', 'thumbup_count', 'cover', 'max_pos', 'created_at'],
     limit: count, 
@@ -37,3 +36,44 @@ exports.create = async(ctx, next) => {
   }
   return album
 }
+
+exports.createV2 = async(ctx, next) => {
+  let requestParam = ctx.request.body
+  // Create album
+  let album = await models.album.create(requestParam)
+  if (requestParam.section.length > 0) {
+    let albumId = album.dataValues.id
+    let sections = requestParam.section
+    let photos = []
+    let videos = []
+    for(let i = 0; i < sections.length; i++) {
+      let item = sections[i]
+      item.section_type = item.type
+      item.album_id = albumId
+      let section = await models.section.create(item);
+      // console.log('111 ', section)
+      let sectionId = section.dataValues.id
+      item.section_id = sectionId
+      if (item.type === 'photo') {
+        photos.push(item)
+      } else if (item.type === 'video') {
+        videos.push(item)
+      }
+    }
+    // Parse photos data, and create photos with section_id
+    let photosData = []
+    photos.forEach(function(item) {
+      item.images.forEach(function(image) {
+        image.album_id = albumId
+        image.section_id = item.section_id
+        photosData.push(image)
+      })
+    })
+    await models.photo.bulkCreate(photosData)
+    // Create videos with section_id
+    await models.video.bulkCreate(videos)
+    return album
+  }
+}
+
+

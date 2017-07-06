@@ -3,36 +3,41 @@ const Sequelize = require('sequelize');
 const { INTEGER, STRING, DATE } = Sequelize;
 
 module.exports = function (sequelize, Sequelize) {
-  const Photo = sequelize.define('photo', {
+  const Video = sequelize.define('video', {
     id: {
       type: INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    image: {
+    video: {
       type: 'STRING',
       defaultVaule: '',
-      comment: '图片地址'
+      comment: '视频地址'
     },
-    caption: {
+    cover: {
       type: 'STRING',
       defaultVaule: '',
-      comment: '图片标题'
+      comment: '封面地址'
     },
-    pos: {
+    width: {
+      type: 'STRING',
+      defaultVaule: '',
+      comment: '视频宽度'
+    },
+    height: {
+      type: 'STRING',
+      defaultVaule: '',
+      comment: '视频高度'
+    },
+    size: {
+      type: 'STRING',
+      defaultVaule: '',
+      comment: '视频大小'
+    },
+    length: {
       type: INTEGER,
       defaultVaule: '',
       comment: ''
-    },
-    filter: {
-      type: 'STRING',
-      defaultVaule: '',
-      comment: ''
-    },
-    album_id: {
-      type: INTEGER,
-      allowNull: false,
-      comment: '图集ID'
     },
     section_id: {
       type: INTEGER,
@@ -52,16 +57,10 @@ module.exports = function (sequelize, Sequelize) {
     underscored: true,
     index: [
       {
-        fields: ['user_id']
+        fields: ['videos_section_id']
       }
     ]
   });
 
-  Photo.associate = function (models) {
-    Photo.belongsTo(models.album, {
-      foreignKey: 'album_Id',
-    });
-  }
-
-  return Photo;
+  return Video;
 }

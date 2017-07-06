@@ -15,7 +15,9 @@ const path = require('path');
 onerror(app)
 
 // middlewares
-
+app.use(bodyparser({
+  enableTypes:['json', 'form', 'text']
+}))
 app.use(koaNunjucks({
   ext: 'html',
   path: path.join(__dirname, '/app/views'),
