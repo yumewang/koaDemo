@@ -16,7 +16,7 @@ exports.create = async(ctx, next) => {
 exports.getbyId = async(ctx, next) => {
   try {
     let album = await AlbumService.getById(ctx, next)
-    ctx.body = {rv: 200, id: album}
+    ctx.body = {rv: 200, data: album}
   } catch (e) {
     ctx.body = {rv: 2001, msg: e}
   }

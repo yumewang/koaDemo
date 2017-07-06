@@ -74,6 +74,7 @@ module.exports = function (sequelize, Sequelize) {
     Album.hasMany(models.photo, {
       foreignKey: 'album_Id'
     });
+    Album.hasMany(models.section);
   }
   return Album;
 }

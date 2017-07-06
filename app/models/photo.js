@@ -61,6 +61,7 @@ module.exports = function (sequelize, Sequelize) {
     Photo.belongsTo(models.album, {
       foreignKey: 'album_Id',
     });
+    Photo.belongsTo(models.section);
   }
 
   return Photo;

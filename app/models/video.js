@@ -61,6 +61,9 @@ module.exports = function (sequelize, Sequelize) {
       }
     ]
   });
-
+  
+  Video.associate = function (models) {
+    Video.belongsTo(models.section);
+  }
   return Video;
 }

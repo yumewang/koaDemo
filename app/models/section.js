@@ -46,5 +46,11 @@ module.exports = function (sequelize, Sequelize) {
     ]
   });
 
+  Section.associate = function (models) {
+    Section.belongsTo(models.album)
+    Section.hasMany(models.video);
+    Section.hasMany(models.photo);
+  }
+
   return Section;
 }
